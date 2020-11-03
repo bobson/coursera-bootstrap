@@ -8,12 +8,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/styles.css" />
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+    <!-- endbuild -->
+
 </head>
 
 <body>
@@ -41,7 +42,7 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    <a role="button" data-toggle="modal" data-target="#loginModal">
+                    <a role="button" id="login-link">
                         <span class="fa fa-sign-in"> Login</span>
                     </a>
                 </span>
@@ -95,8 +96,8 @@
     <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
-                <div class="modal-header bg-warning">
-                    <h3 class="modal-title text-white">Reserve a Table</h3>
+                <div class="modal-header ">
+                    <h3 class="modal-title ">Reserve a Table</h3>
                     <button class="close" type="button" data-dismiss="modal">
                         &times;
                     </button>
@@ -120,7 +121,6 @@
                                 <label for="6">6</label>
                             </div>
 
-
                             <label class="col-12 col-lg-2">Section</label>
                             <div class="col col-lg-10 mb-2">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -133,13 +133,12 @@
                                 </div>
                             </div>
 
-
                             <label for="date" class="col-12 col-lg-2">Date and Time</label>
                             <div class="col-6 col-lg-4">
-                                <input type="date" class="form-control" id="date" />
+                                <input type="text" class="form-control" id="date" placeholder="Date" />
                             </div>
                             <div class="col-6 col-lg-4">
-                                <input type="time" class="form-control" placeholder="Time" />
+                                <input type="text" class="form-control" placeholder="Time" />
                             </div>
 
                             <div class="col-12 col-lg-6 offset-lg-2 mt-2">
@@ -170,8 +169,8 @@
                     <img src="./img/logo.png" class="img-fluid" alt="logo" />
                 </div>
                 <div class="col-12 col-sm">
-                    <a class="btn btn-block btn-warning btn-sm text-black" role="button" data-toggle="modal"
-                        data-target="#reserveModal">Reserve Table</a>
+                    <a class="btn btn-block btn-warning btn-sm text-white" id="reserve-button">Reserve
+                        Table</a>
                 </div>
             </div>
         </div>
@@ -310,7 +309,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -363,26 +361,12 @@
     </footer>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#mycarousel").carousel({ interval: 2000 });
-            $("#carouselButton").click(function () {
-                if ($('#carouselButton').children('span').hasClass('fa-pause')) {
-                    $("#mycarousel").carousel('pause');
-                    $('#carouselButton').children('span').removeClass('fa-pause');
-                    $('#carouselButton').children('span').addClass('fa-play');
-                }
-                else if ($('#carouselButton').children('span').hasClass('fa-play')) {
-                    $("#mycarousel").carousel('cycle');
-                    $('#carouselButton').children('span').removeClass('fa-play');
-                    $('#carouselButton').children('span').addClass('fa-pause');
-                };
-            })
-        });
-    </script>
+    <script src="./js/scripts.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>
